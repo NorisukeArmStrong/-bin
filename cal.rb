@@ -7,13 +7,17 @@ require 'date'
 opt = OptionParser.new
 Date.today
 
+month = Date.today.month
+year = Date.today.year
+line_size = 20
+
 opt.on('-y [VAL]') {|v| year = v }
 opt.on('-m [VAL]') {|v| month = v }
 opt.parse!(ARGV)
 
-month = today.month
-year = today.year
 
-puts "month月　yaer年"
-puts "日　月　火　水　木　金　土"
-puts "日にち"
+puts "#{month}月 #{year}".center(line_size)
+puts "日 月 火 水 木 金 土"
+puts "1 2 3 4 5 6 7 "
+
+p Date.today.wday
