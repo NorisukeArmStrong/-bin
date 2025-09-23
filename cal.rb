@@ -23,8 +23,12 @@ puts "#{month}月 #{year}".center(line_size)
 puts "日 月 火 水 木 金 土"
 
 (sel_first_day..sel_last_day).each do |d|
-  if d.day.size == 1
-    print d.day.to_s.rjust(2)
+  if d.wday == 6
+    print "\n"
+  end
+  if d.day.to_s.length == 1
+
+    print d.day.to_s.rjust(2) + " "
   else
     print d.day.to_s + " "
   end
