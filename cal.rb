@@ -13,7 +13,7 @@ line_size = 20
 
 opt.on('-y [VAL]') {|v| year = v.to_i }
 opt.on('-m [VAL]') {|v| month = v.to_i }
-opt.parse!(ARGV)
+opt.parse(ARGV)
 
 sel_wday = Date.new(year, month, 1).wday
 sel_first_day = Date.new(year, month, 1)
