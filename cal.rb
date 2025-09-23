@@ -26,7 +26,7 @@ sel_wday.times do
 end
 
 (sel_first_day..sel_last_day).each do |d|
-  if d.wday == 0
+  if d.wday == 0 && d.day != 1
     print "\n"
   end
   if d.day.to_s.length == 1
