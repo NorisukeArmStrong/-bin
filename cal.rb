@@ -5,19 +5,27 @@ require 'date'
 
 # main_program
 opt = OptionParser.new
-Date.today
+date = Date.today
 
-month = Date.today.month
-year = Date.today.year
+month = date.month
+year = date.year
 line_size = 20
 
 opt.on('-y [VAL]') {|v| year = v }
 opt.on('-m [VAL]') {|v| month = v }
 opt.parse!(ARGV)
 
+sel_wday = Date.new(year, month, 1).wday
+sel_first_day = Date.new(year, month, 1)
+sel_last_day = Date.new(year, month, -1)
 
 puts "#{month}月 #{year}".center(line_size)
 puts "日 月 火 水 木 金 土"
-puts "1 2 3 4 5 6 7 "
 
-p Date.today.wday
+(sel_first_day..sel_last_day).each do |d|
+  if d.day.size == 1
+    print d.day.to_s.rjust(2)
+  else
+    print d.day.to_s + " "
+  end
+end
