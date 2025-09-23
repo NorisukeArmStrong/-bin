@@ -11,8 +11,8 @@ month = date.month
 year = date.year
 line_size = 20
 
-opt.on('-y [VAL]') {|v| year = v }
-opt.on('-m [VAL]') {|v| month = v }
+opt.on('-y [VAL]') {|v| year = v.to_i }
+opt.on('-m [VAL]') {|v| month = v.to_i }
 opt.parse!(ARGV)
 
 sel_wday = Date.new(year, month, 1).wday
@@ -21,13 +21,15 @@ sel_last_day = Date.new(year, month, -1)
 
 puts "#{month}月 #{year}".center(line_size)
 puts "日 月 火 水 木 金 土"
+(0..sel_wday).each do
+  print "   "
+end
 
 (sel_first_day..sel_last_day).each do |d|
   if d.wday == 6
     print "\n"
   end
   if d.day.to_s.length == 1
-
     print d.day.to_s.rjust(2) + " "
   else
     print d.day.to_s + " "
