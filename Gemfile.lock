@@ -232,7 +232,6 @@ PLATFORMS
 DEPENDENCIES
   debug
   rails
-  rubocop
   rubocop-fjord
 
 BUNDLED WITH

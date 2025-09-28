@@ -3,8 +3,8 @@
 source "https://rubygems.org"
 
 gem "rails"
-gem "rubocop"
 gem "debug"
+# For plain Ruby scripts
 group :development do
   gem 'rubocop-fjord', require: false
 end
