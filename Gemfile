@@ -4,7 +4,15 @@ source "https://rubygems.org"
 
 gem "rails"
 gem "debug"
+
 # For plain Ruby scripts
 group :development do
   gem 'rubocop-fjord', require: false
 end
+
+# For Rails projects
+group :development do
+  gem 'rubocop-fjord', require: false
+  gem 'rubocop-rails', require: false
+end
+

@@ -1,5 +1,13 @@
-inherit_from: .rubocop_todo.yml
-  # For plain Ruby scripts
+# 下記の記述よくわからない、AI指示のためコメントアウト
+# inherit_from: .rubocop_todo.yml
+
+# For plain Ruby scripts
 inherit_gem:
   rubocop-fjord:
     - "config/rubocop.yml"
+
+# For Rails projects
+inherit_gem:
+  rubocop-fjord:
+    - "config/rubocop.yml"
+    - "config/rails.yml"
